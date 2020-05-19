@@ -1,2 +1,2 @@
 # confusion
-This sample exercise from coursera how to use create-react-app  for  front-end web development 
+This is sample exercise from coursera courses how to use create-react-app  for  front-end web development 
