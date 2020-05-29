@@ -22,13 +22,13 @@ import { Link } from 'react-router-dom';
     }
 
     function RenderComments({comments}){
-        if(comments != null){
+        if(comments != null) {
             return (
                 comments.map((comment)=>{
                     return (
                         <li key={comment.id}>
                             <p>{comment.comment}</p>
-                            <p>-- {comment.author},
+                            <p>-- {comment.author}, 
                             &nbsp;
                             {new Intl.DateTimeFormat('en-US', {
                                     year: 'numeric',
@@ -67,6 +67,7 @@ import { Link } from 'react-router-dom';
             </div>
         );
     }
+
 
 export default DishDetail;
 
