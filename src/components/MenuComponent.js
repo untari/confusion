@@ -21,11 +21,11 @@ import { Loading } from './LoadingComponent';
     const Menu = (props) => {
         const menu = props.dishes.dishes.map((dish)=> {
                 return (
-                    <div className="col-12 col-md-5 m-1">
-                        <RenderMenuItem dish={dish}  />
+                    <div className="col-12 col-md-5 m-1"  key={dish.id}>
+                        <RenderMenuItem dish={dish} onClick={props.onClick} />
                     </div>
-                );
-        });
+                    );
+                });
         if (props.dishes.isLoading) {
                 return(
                     <div className="container">

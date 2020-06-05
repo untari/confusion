@@ -42,7 +42,7 @@ class CommentForm extends Component {
               <Row className="form-group">
                 <Label htmlFor="rating" md={12}>Rating</Label>
                 <Col md={12}>
-                  <Control.select model=".rating" defaultValue="1" className="form-control" name="rating">
+                  <Control.select model=".rating" className="form-control" name="rating">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -101,7 +101,7 @@ function RenderDish( {dish} ) {
 
 function RenderComments({comments, addComment, dishId}) {
 
-  if (comments == null || comments.length === 0) {
+  if (comments == null) {
     return (
       <div></div>
     );
@@ -117,13 +117,15 @@ function RenderComments({comments, addComment, dishId}) {
   });
 
   return (
-    <div>
-      <h4>Comments</h4>
-      <ul className="list-unstyled">
-        { renderedComments }
-      </ul>
-      <CommentForm dishId={dishId} addComment={addComment} />
-    </div>
+     <React.Fragment>
+        <div>
+            <h4>Comments</h4>
+            <ul className="list-unstyled">
+            { renderedComments }
+            </ul>
+        </div>
+        <CommentForm dishId={dishId} addComment= {addComment} />
+    </React.Fragment>
   );
 
 }
